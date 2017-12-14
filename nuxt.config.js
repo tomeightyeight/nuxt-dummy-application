@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('path')
 
 module.exports = {
   /**
@@ -27,8 +27,8 @@ module.exports = {
    * Build configuration (webpack extension)
    */
   build: {
-    /*
-    ** Babel
+    /**
+     * Babel
      */
     babel: {
       presets: ['vue-app'],

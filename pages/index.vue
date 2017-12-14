@@ -1,8 +1,14 @@
 <template>
   <section class="section">
-    <el-form ref="form" :model="sizeForm" label-width="120px" size="mini">
-      <el-form-item label="Activity name">
-        <el-input v-model="sizeForm.name"></el-input>
+    <el-form ref="form" :model="exampleForm">
+      <el-form-item label="Example first">
+        <el-input v-model="exampleForm.first"></el-input>
+      </el-form-item>
+      <el-form-item label="Example second">
+        <el-input v-model="exampleForm.second"></el-input>
+      </el-form-item>
+      <el-form-item label="Example third">
+        <el-input v-model="exampleForm.third"></el-input>
       </el-form-item>
     </el-form>
   </section>
@@ -22,29 +28,24 @@ export default {
   name: 'index-view',
 
   components: {
-    'el-form': Form,
-    'el-form-item': FormItem,
-    'el-input': Input,
-    'el-button': Button
+    'ElForm': Form,
+    'ElFormItem': FormItem,
+    'ElInput': Input,
+    'ElButton': Button
   },
 
   data () {
     return {
-      sizeForm: {
-        name: '',
-        region: '',
-        date1: '',
-        date2: '',
-        delivery: false,
-        type: [],
-        resource: '',
-        desc: ''
+      exampleForm: {
+        first: '',
+        second: '',
+        third: ''
       }
     }
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 </style>
