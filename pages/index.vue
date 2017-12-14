@@ -1,12 +1,20 @@
 <template>
-  <section>{{ filename }}</section>
+  <section>
+    <el-button>Example Button</el-button>
+  </section>
 </template>
 
 <script>
 'use strict'
 
+import { Button } from 'element-ui'
+
 export default {
   name: 'index-view',
+
+  components: {
+    'el-button': Button
+  },
 
   data () {
     return {
@@ -17,11 +25,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-section {
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+
 </style>

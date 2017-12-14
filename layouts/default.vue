@@ -1,15 +1,27 @@
 <template>
-  <div>
-    <h1>Default Layout</h1>
-    <nuxt/>
-  </div>
+  <main class="main">
+    <el-row>
+      <el-col :span="24">
+        <div class="grid-content bg-purple-dark">
+          <nuxt />
+        </div>
+      </el-col>
+    </el-row>
+  </main>
 </template>
 
 <script>
 'use strict'
 
+import { Row, Col } from 'element-ui'
+
 export default {
   name: 'default',
+
+  components: {
+    'el-row': Row,
+    'el-col': Col
+  },
 
   data () {
     return {
@@ -18,3 +30,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.main {
+  //
+}
+</style>
