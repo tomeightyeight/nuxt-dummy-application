@@ -1,6 +1,8 @@
 <template>
   <el-container>
-    <el-header>Header</el-header>
+    <el-header>
+      <header-container />
+    </el-header>
     <el-container>
       <el-aside width="200px">
         <navigation-container />
@@ -27,6 +29,7 @@ import {
 } from 'element-ui'
 
 import NavigationContainer from '../components/containers/NavigationContainer'
+import HeaderContainer from '../components/containers/HeaderContainer'
 
 export default {
   name: 'default',
@@ -37,7 +40,8 @@ export default {
     'ElAside': Aside,
     'ElMain': Main,
     'ElFooter': Footer,
-    NavigationContainer
+    NavigationContainer,
+    HeaderContainer
   },
 
   data () {
@@ -56,8 +60,12 @@ body {
 .el-header, .el-footer {
   background-color: #B3C0D1;
   color: #333;
-  text-align: center;
   line-height: 60px;
+  padding: 0;
+}
+
+.el-footer {
+  text-align: center;
 }
 
 .el-aside {
@@ -69,7 +77,6 @@ body {
 .el-main {
   background-color: #E9EEF3;
   color: #333;
-  text-align: center;
   line-height: 160px;
 }
 
