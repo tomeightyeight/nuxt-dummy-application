@@ -2,7 +2,9 @@
   <el-container>
     <el-header>Header</el-header>
     <el-container>
-      <el-aside width="200px">Aside</el-aside>
+      <el-aside width="200px">
+        <navigation-container />
+      </el-aside>
       <el-container>
         <el-main>
           <nuxt />
@@ -24,6 +26,8 @@ import {
   Footer
 } from 'element-ui'
 
+import NavigationContainer from '../components/containers/NavigationContainer'
+
 export default {
   name: 'default',
 
@@ -32,7 +36,8 @@ export default {
     'ElHeader': Header,
     'ElAside': Aside,
     'ElMain': Main,
-    'ElFooter': Footer
+    'ElFooter': Footer,
+    NavigationContainer
   },
 
   data () {
@@ -58,7 +63,6 @@ body {
 .el-aside {
   background-color: #D3DCE6;
   color: #333;
-  text-align: center;
   line-height: 200px;
 }
 
