@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  /*
+  /**
    * Headers of the page
    */
   head: {
@@ -15,11 +15,17 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  /*
+  /**
    * Customize the progress bar color
    */
   loading: { color: '#000' },
-  /*
+  /**
+   * 
+   */
+  plugins: [
+    'element-ui'
+  ],
+  /**
    * Build configuration (webpack extension)
    */
   build: {
