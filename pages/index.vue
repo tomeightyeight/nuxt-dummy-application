@@ -3,7 +3,7 @@
 </template>
 
 <script>
-'use strict';
+'use strict'
 
 export default {
   name: 'index-view',
@@ -11,7 +11,7 @@ export default {
   data () {
     return {
       filename: 'index.vue'
-    };
+    }
   }
 }
 </script>
