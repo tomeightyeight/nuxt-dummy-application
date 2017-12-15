@@ -24,7 +24,10 @@ export const getters = {
 
 export const mutations = {
   [types.ADD_TODO] (state, { text }) {
-    state.list.push(text)
+    state.list.push({
+      text: text,
+      completed: true
+    })
   },
 
   [types.REMOVE_TODO] (state, { index }) {
