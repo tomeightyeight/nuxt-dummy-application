@@ -18,7 +18,7 @@ module.exports = {
    */
   loading: { color: '#000' },
   /**
-   *
+   * Custom plugins
    */
   plugins: [
     //
