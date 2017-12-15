@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@nuxtjs/router": "^1.0.1",
-    "nuxt": "^1.0.0-rc11"
+    "nuxt": "^1.0.0-gh-3ec8f14"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
