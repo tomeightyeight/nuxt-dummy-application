@@ -1,4 +1,4 @@
-<template>
+<template lang="html">
   <section class="section">
     <ul>
       <li v-for="(item, index) in list" :key="index">
@@ -10,7 +10,9 @@
     <el-input v-model="input"></el-input>
     <el-button @click="submit()">Submit</el-button>
 
-    <span>Completed: {{ completedToDos }}</span>
+    <div>
+      <span>Completed: {{ completedToDos }}</span>
+    </div>
   </section>
 </template>
 

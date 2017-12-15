@@ -1,4 +1,4 @@
-<template>
+<template lang="html">
   <section class="section">
     <el-form ref="form" :model="form" label-width="120px">
       <el-form-item label="Example field">
