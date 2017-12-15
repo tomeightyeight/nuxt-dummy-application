@@ -2,13 +2,15 @@
   <section class="section">
     <ul>
       <li v-for="(item, index) in list" :key="index">
-        {{ item }}
+        {{ item.text }}
         <el-button @click="remove(index)">X</el-button>
       </li>
     </ul>
 
     <el-input v-model="input"></el-input>
     <el-button @click="submit()">Submit</el-button>
+
+    <span>Completed: {{ completedToDos }}</span>
   </section>
 </template>
 
@@ -22,6 +24,7 @@ import {
 
 import {
   mapState,
+  mapGetters,
   mapActions
 } from 'vuex'
 
@@ -42,7 +45,11 @@ export default {
   computed: {
     ...mapState('todos', {
       list: state => state.list
-    })
+    }),
+
+    ...mapGetters('todos', [
+      'completedToDos'
+    ])
   },
 
   methods: {

@@ -2,14 +2,24 @@
 
 export const state = () => ({
   list: [
-    'first example item',
-    'second example item'
+    {
+      text: 'first example item',
+      completed: true
+    },
+    {
+      text: 'second example item',
+      completed: false
+    }
   ]
 })
 
 export const types = {
   ADD_TODO: 'ADD_TODO',
   REMOVE_TODO: 'REMOVE_TODO'
+}
+
+export const getters = {
+  completedToDos: state => state.list.filter(todo => todo.completed).length
 }
 
 export const mutations = {
