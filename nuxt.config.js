@@ -44,6 +44,11 @@ module.exports = {
       comments: false
     },
 
+    postcss: [
+      require('autoprefixer')(),
+      require('postcss-clean')()
+    ],
+
     plugins: [
       new webpack.NormalModuleReplacementPlugin(
         /element-ui[/\\]lib[/\\]locale[/\\]lang[/\\]zh-CN/,
