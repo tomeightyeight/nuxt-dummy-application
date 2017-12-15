@@ -1,3 +1,5 @@
+'use strict'
+
 export const state = () => ({
   list: [
     'first example item',
@@ -24,18 +26,14 @@ export const actions = {
   addToDo ({ commit }, { text }) {
     commit({
       type: types.ADD_TODO,
-      payload: {
-        text: text
-      }
+      text: text
     })
   },
 
   removeToDo ({ commit }, { index }) {
     commit({
       type: types.REMOVE_TODO,
-      payload: {
-        index: index
-      }
+      index: index
     })
   }
 }

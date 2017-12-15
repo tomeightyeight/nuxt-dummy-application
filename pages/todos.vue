@@ -1,8 +1,7 @@
 <template>
   <section class="section">
     <ul>
-      <li v-for="(item, index) in list" 
-        :key="index">
+      <li v-for="(item, index) in list" :key="index">
         {{ item }}
         <el-button @click="remove(index)">X</el-button>
       </li>
@@ -53,16 +52,12 @@ export default {
     ]),
 
     submit () {
-      console.log(this.input)
-
       this.addToDo({
         text: this.input
       })
     },
 
     remove (index) {
-      console.log(index)
-
       this.removeToDo({
         index: index
       })
