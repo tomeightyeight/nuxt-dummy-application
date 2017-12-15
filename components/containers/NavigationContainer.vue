@@ -62,10 +62,10 @@ export default {
   name: 'navigation-container',
 
   components: {
-    'ElMenu': Menu,
-    'ElSubmenu': Submenu,
-    'ElMenuItem': MenuItem,
-    'ElMenuItemGroup': MenuItemGroup
+    'el-menu': Menu,
+    'el-submenu': Submenu,
+    'el-menu-item': MenuItem,
+    'el-menu-item-group': MenuItemGroup
   }
 }
 </script>

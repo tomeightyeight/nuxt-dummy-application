@@ -21,11 +21,20 @@ export const mutations = {
 }
 
 export const actions = {
-  addToDo ({ commit }, text) {
+  addToDo ({ commit }, { text }) {
     commit({
       type: types.ADD_TODO,
       payload: {
         text: text
+      }
+    })
+  },
+
+  removeToDo ({ commit }, { index }) {
+    commit({
+      type: types.REMOVE_TODO,
+      payload: {
+        index: index
       }
     })
   }

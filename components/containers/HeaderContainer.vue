@@ -29,9 +29,9 @@ export default {
   name: 'header-container',
 
   components: {
-    'ElMenu': Menu,
-    'ElSubmenu': Submenu,
-    'ElMenuItem': MenuItem
+    'el-menu': Menu,
+    'el-submenu': Submenu,
+    'el-menu-item': MenuItem
   },
 
   data () {

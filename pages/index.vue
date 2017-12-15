@@ -64,19 +64,19 @@ export default {
   name: 'index-view',
 
   components: {
-    'ElForm': Form,
-    'ElFormItem': FormItem,
-    'ElInput': Input,
-    'ElButton': Button,
-    'ElRadioGroup': RadioGroup,
-    'ElRadio': Radio,
-    'ElCheckboxGroup': CheckboxGroup,
-    'ElCheckbox': Checkbox,
-    'ElSwitch': Switch,
-    'ElCol': Col,
-    'ElDatePicker': DatePicker,
-    'ElSelect': Select,
-    'ElOption': Option
+    'el-form': Form,
+    'el-form-item': FormItem,
+    'el-input': Input,
+    'el-button': Button,
+    'el-radio-group': RadioGroup,
+    'el-radio': Radio,
+    'el-checkbox-group': CheckboxGroup,
+    'el-checkbox': Checkbox,
+    'el-switch': Switch,
+    'el-col': Col,
+    'el-date-picker': DatePicker,
+    'el-select': Select,
+    'el-option': Option
   },
 
   data () {

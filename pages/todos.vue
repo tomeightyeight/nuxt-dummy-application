@@ -4,10 +4,11 @@
       <li v-for="(item, index) in list" 
         :key="index">
         {{ item }}
+        <el-button @click="remove(index)">X</el-button>
       </li>
     </ul>
 
-    <el-input></el-input>
+    <el-input v-model="input"></el-input>
     <el-button @click="submit()">Submit</el-button>
   </section>
 </template>
@@ -35,7 +36,7 @@ export default {
 
   data () {
     return {
-      // local state
+      input: ''
     }
   },
 
@@ -47,12 +48,23 @@ export default {
 
   methods: {
     ...mapActions('todos', [
-      'addToDo'
+      'addToDo',
+      'removeToDo'
     ]),
 
     submit () {
+      console.log(this.input)
+
       this.addToDo({
-        text: 'example state'
+        text: this.input
+      })
+    },
+
+    remove (index) {
+      console.log(index)
+
+      this.removeToDo({
+        index: index
       })
     }
   }
@@ -66,6 +78,6 @@ ul {
 
 li {
   line-height: 1;
-  height: 1em;
+  height: 3em;
 }
 </style>
