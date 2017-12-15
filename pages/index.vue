@@ -1,8 +1,8 @@
 <template>
   <section class="section">
     <el-form ref="form" :model="form" label-width="120px">
-      <el-form-item label="Activity name">
-        <el-input v-model="form.name"></el-input>
+      <el-form-item label="Example field">
+        <el-input v-model="name"></el-input>
       </el-form-item>
       <el-form-item label="Activity zone">
         <el-select v-model="form.region" placeholder="please select your zone">
@@ -35,7 +35,7 @@
       </el-form-item>
       <el-form-item>
         <el-button type="primary">Create</el-button>
-        <el-button>Cancel</el-button>
+        <el-button @click="submit()">Cancel</el-button>
       </el-form-item>
     </el-form>
   </section>
