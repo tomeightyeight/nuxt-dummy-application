@@ -92,6 +92,12 @@ export default {
         desc: ''
       }
     }
+  },
+
+  method: {
+    submit () {
+      console.log('submit')
+    }
   }
 }
 </script>
