@@ -19,7 +19,13 @@ module.exports = {
   /**
    * Customize the progress bar color
    */
-  loading: '~/components/loading.vue',
+  // loading: '~/components/loading.vue',
+
+  loadingIndicator: {
+    name: 'chasing-dots',
+    color: '#000',
+    background: 'white'
+  },
   /**
    * Custom plugins
    */

@@ -55,6 +55,7 @@ export default {
 <style lang="scss">
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
 }
 
 .el-header, .el-footer {
