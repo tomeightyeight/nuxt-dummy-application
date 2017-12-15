@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
   /**
@@ -27,9 +28,6 @@ module.exports = {
    * Build configuration (webpack extension)
    */
   build: {
-    /**
-     * Babel
-     */
     babel: {
       presets: ['vue-app'],
       plugins: [
@@ -46,13 +44,20 @@ module.exports = {
       comments: false
     },
 
-    extend(config, ctx) {
+    plugins: [
+      new webpack.NormalModuleReplacementPlugin(
+        /element-ui[\/\\]lib[\/\\]locale[\/\\]lang[\/\\]zh-CN/,
+        'element-ui/lib/locale/lang/en'
+      )
+    ],
+
+    extend(config, { dev, isClient }) {
       // SASS loader pipeline for Vue single file components
-      const vueLoader = config.module.rules.find(rule => rule.loader === 'vue-loader');
-      vueLoader.options.loaders.scss = 'vue-style-loader!css-loader!sass-loader?' + JSON.stringify({includePaths: [path.resolve(__dirname), 'node_modules']});
+      const vueLoader = config.module.rules.find(rule => rule.loader === 'vue-loader')
+      vueLoader.options.loaders.scss = 'vue-style-loader!css-loader!sass-loader?' + JSON.stringify({includePaths: [path.resolve(__dirname), 'node_modules']})
 
       // Run ESLint on save
-      if (ctx.dev && ctx.isClient) {
+      if (dev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
