@@ -6,12 +6,17 @@
     background-color="#545c64"
     text-color="#fff"
     active-text-color="#ffd04b">
-    <el-menu-item index="1">Something</el-menu-item>
-    <el-submenu index="2">
+    <el-menu-item index="1">
+      <nuxt-link to="/">Index</nuxt-link>
+    </el-menu-item>
+    <el-menu-item index="2">
+      <nuxt-link to="/todos">Something</nuxt-link>
+    </el-menu-item>    
+    <el-submenu index="3">
       <template slot="title">Something Else</template>
-      <el-menu-item index="2-1">item one</el-menu-item>
-      <el-menu-item index="2-2">item two</el-menu-item>
-      <el-menu-item index="2-3">item three</el-menu-item>
+      <el-menu-item index="3-1">item one</el-menu-item>
+      <el-menu-item index="3-2">item two</el-menu-item>
+      <el-menu-item index="3-3">item three</el-menu-item>
     </el-submenu>
   </el-menu>
 </template>
@@ -43,5 +48,7 @@ export default {
 </script>
 
 <style lang="scss">
-
+.el-menu-item a {
+  text-decoration: none;
+}
 </style>
