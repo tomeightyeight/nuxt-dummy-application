@@ -32,6 +32,12 @@ export default {
     'ElMenu': Menu,
     'ElSubmenu': Submenu,
     'ElMenuItem': MenuItem
+  },
+
+  data () {
+    return {
+      activeIndex2: ''
+    }
   }
 }
 </script>
