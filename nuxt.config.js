@@ -46,12 +46,12 @@ module.exports = {
 
     plugins: [
       new webpack.NormalModuleReplacementPlugin(
-        /element-ui[\/\\]lib[\/\\]locale[\/\\]lang[\/\\]zh-CN/,
+        /element-ui[/\\]lib[/\\]locale[/\\]lang[/\\]zh-CN/,
         'element-ui/lib/locale/lang/en'
       )
     ],
 
-    extend(config, { dev, isClient }) {
+    extend (config, { dev, isClient }) {
       // SASS loader pipeline for Vue single file components
       const vueLoader = config.module.rules.find(rule => rule.loader === 'vue-loader')
       vueLoader.options.loaders.scss = 'vue-style-loader!css-loader!sass-loader?' + JSON.stringify({includePaths: [path.resolve(__dirname), 'node_modules']})
