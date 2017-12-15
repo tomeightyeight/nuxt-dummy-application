@@ -46,6 +46,10 @@ module.exports = {
       comments: false
     },
 
+    vendor: [
+      'axios'
+    ],
+
     postcss: [
       require('autoprefixer')(),
       require('postcss-clean')()
