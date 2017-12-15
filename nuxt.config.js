@@ -63,6 +63,6 @@ module.exports = {
     }
   },
   generate: {
-    dir: 'public'
+    dir: 'dist'
   }
 }
