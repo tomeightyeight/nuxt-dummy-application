@@ -56,13 +56,13 @@ module.exports = {
       )
     ],
 
-    extend (config, { dev, isClient }) {
+    extend (config, { isDev, isClient }) {
       // SASS loader pipeline for Vue single file components
       const vueLoader = config.module.rules.find(rule => rule.loader === 'vue-loader')
       vueLoader.options.loaders.scss = 'vue-style-loader!css-loader!sass-loader?' + JSON.stringify({includePaths: [path.resolve(__dirname), 'node_modules']})
 
       // Run ESLint on save
-      if (dev && isClient) {
+      if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
