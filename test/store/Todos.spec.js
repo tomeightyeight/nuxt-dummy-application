@@ -27,8 +27,8 @@ describe('mutations', () => {
     
     expect(first.text).not.toBe(baseStore.list[0].text)
   })
-  
 })
+
 describe('getters', () => {
   it('returns a count of all the completed todos', () => {
     const actual = baseStore.list.filter(todo => todo.completed).length
