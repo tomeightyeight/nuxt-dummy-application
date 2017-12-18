@@ -37,6 +37,7 @@ describe('todos.vue', () => {
     store = new Vuex.Store({
       modules: {
         todos: {
+          namespaced: true,
           state,
           getters,
           actions
@@ -46,9 +47,9 @@ describe('todos.vue', () => {
   })
 
   it('invokes store action addToDo when submit button clicked', () => {
-    // const wrapper = shallow(TodosView, { store, localVue })
+    const wrapper = shallow(TodosView, { store, localVue })
     
-    // console.log(wrapper)
+    console.log(wrapper)
 
     // const button = wrapper.find('.btn-submit')
     // button.trigger('click')
