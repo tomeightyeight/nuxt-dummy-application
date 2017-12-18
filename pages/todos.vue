@@ -3,7 +3,7 @@
     <ul>
       <li v-for="(item, index) in list" :key="index">
         {{ item.title }}
-        <el-button class="btn-remove" @click="remove(index)">X</el-button>
+        <el-button class="btn-remove" @click.prevent="remove(index)">X</el-button>
       </li>
     </ul>
 
@@ -12,7 +12,7 @@
     <el-button class="btn-fetch" @click.prevent="fetch()">Fetch</el-button>
 
     <div>
-      <span>Completed: {{ completedToDos }}</span>
+      <span class="some-test-class">Completed: {{ completedToDos }}</span>
     </div>
   </section>
 </template>

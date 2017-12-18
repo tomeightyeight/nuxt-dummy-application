@@ -1,7 +1,11 @@
 /* eslint-disable */
 'use strict'
 
-import { shallow, createLocalVue } from 'vue-test-utils'
+import { 
+  mount,
+  createLocalVue 
+} from 'vue-test-utils'
+
 import Vuex from 'vuex'
 import TodosView from '@/pages/todos.vue'
 
@@ -47,20 +51,29 @@ describe('todos.vue', () => {
   })
 
   it('invokes store action addToDo when submit button clicked', () => {
-    const wrapper = shallow(TodosView, { store, localVue })
-    
-    console.log(wrapper)
+    const wrapper = mount(TodosView, { store, localVue })
+    const button = wrapper.find('.btn-submit')
 
-    // const button = wrapper.find('.btn-submit')
-    // button.trigger('click')
-    // expect(actions.addToDo).toHaveBeenCalled()
+    button.trigger('click')
+    
+    expect(actions.addToDo).toBeCalled()
   })
 
-  it('invokes store action remoteToDo when remove button is clicked', () => {
-    //
+  it('invokes store action removeToDo when remove button is clicked', () => {
+    const wrapper = mount(TodosView, { store, localVue })
+    const button = wrapper.find('.btn-remove')
+
+    button.trigger('click')
+
+    expect(actions.removeToDo).toBeCalled()
   })
 
   it ('invokes store action fetchToDos when fetch button is clicked', () => {
-    //
+    const wrapper = mount(TodosView, { store, localVue })
+    const button = wrapper.find('.btn-fetch')
+
+    button.trigger('click')
+
+    expect(actions.fetchToDos).toBeCalled()
   })
 })
