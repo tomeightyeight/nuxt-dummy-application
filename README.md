@@ -17,6 +17,9 @@ $ npm start
 
 # generate static project
 $ npm run generate
+
+# run test suites
+$ npm test
 ```
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
