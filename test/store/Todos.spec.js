@@ -18,22 +18,22 @@ describe('mutations', () => {
     mutations[types.ADD_TODO](baseStore, { text: text })
     const item = baseStore.list.pop()
 
-    expect(item.text).toEqual(text)
+    expect(item.text).toBe(text)
   })
 
   it('removes a todo from the list array by index', () => {
     const first = baseStore.list[0]
     mutations[types.REMOVE_TODO](baseStore, { index: 0 })
     
-    expect(first.text).not.toEqual(baseStore.list[0].text)
+    expect(first.text).not.toBe(baseStore.list[0].text)
   })
+  
 })
-
 describe('getters', () => {
   it('returns a count of all the completed todos', () => {
     const actual = baseStore.list.filter(todo => todo.completed).length
     const completed = getters.completedToDos(baseStore)
 
-    expect(completed).toEqual(actual)
+    expect(completed).toBe(actual)
   })   
 })
