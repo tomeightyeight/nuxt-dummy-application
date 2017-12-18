@@ -44,7 +44,7 @@
     "vue-test-utils": "^1.0.0-beta.8"
   },
   "jest": {
-    "verbose": true,
+    "verbose": false,
     "moduleFileExtensions": [
       "js",
       "vue"
