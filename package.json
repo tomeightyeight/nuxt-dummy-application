@@ -20,6 +20,7 @@
     "autoprefixer": "^7.2.3",
     "axios": "^0.17.1",
     "babel-eslint": "^7.2.3",
+    "babel-jest": "^21.2.0",
     "babel-plugin-component": "^0.10.1",
     "element-ui": "^2.0.8",
     "eslint": "^4.3.0",
@@ -30,9 +31,13 @@
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
+    "jest": "^21.2.1",
+    "jest-serializer-vue": "^0.3.0",
     "node-sass": "^4.7.2",
     "postcss-clean": "^1.1.0",
     "sass-loader": "^6.0.6",
-    "vue-style-loader": "^3.0.3"
+    "vue-jest": "^1.4.0",
+    "vue-style-loader": "^3.0.3",
+    "vue-test-utils": "^1.0.0-beta.8"
   }
 }
