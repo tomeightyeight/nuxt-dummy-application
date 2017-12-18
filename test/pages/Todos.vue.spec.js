@@ -29,7 +29,7 @@ describe('Todos.vue', () => {
 
   })
 
-  it('invokes store action remoteToDo when delete button is clicked', () => {
+  it('invokes store action remoteToDo when remove button is clicked', () => {
 
   })
 
