@@ -8,8 +8,8 @@
     </ul>
 
     <el-input v-model="input"></el-input>
-    <el-button @click="submit()">Submit</el-button>
-    <el-button @click="fetch()">Fetch</el-button>
+    <el-button @click.prevent="submit()">Submit</el-button>
+    <el-button @click.prevent="fetch()">Fetch</el-button>
 
     <div>
       <span>Completed: {{ completedToDos }}</span>
