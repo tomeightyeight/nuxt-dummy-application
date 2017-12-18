@@ -1,7 +1,7 @@
 'use strict'
 
-import toDoService from '../api/todos.js'
-import { uuid } from '../utils/uuid.js'
+import toDoService from '@/api/todos.js'
+import { uuid } from '@/utils/uuid.js'
 
 export const state = () => ({
   list: [

@@ -72,20 +72,20 @@ describe('actions', () => {
   it('fetchToDos invokes API service fetchAll', () => {
     (async function() {
         await actions.fetchToDos({ commit: commit })
-        expect(toDoService.fetchAll).toHaveBeenCalled()
+        expect(toDoService.fetchAll).toBeCalled()
     })
   })
 
   it('fetchToDos commits SET_TODOS mutation', () => {
     (async function() {
       await actions.fetchToDos({ commit: commit })
-      expect(commit).toHaveBeenCalled()
+      expect(commit).toBeCalled()
     })
   })
   it('fetchToDo invokes API service fetch', () => {
     (async function() {
       await actions.fetchToDo ({ commit }, { id: 1 })
-      expect(toDoService.fetch).toHaveBeenCalled()
+      expect(toDoService.fetch).toBeCalled()
     })
   })
 })
