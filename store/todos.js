@@ -1,18 +1,19 @@
 'use strict'
 
 import axios from 'axios'
+import uuid from '~/utils/uuid'
 
 export const state = () => ({
   list: [
     {
       'userId': 1,
-      'id': 1,
+      'id': uuid(),
       'title': 'delectus aut autem original',
       'completed': true
     },
     {
       'userId': 1,
-      'id': 2,
+      'id': uuid(),
       'title': 'quis ut nam facilis et officia qui original',
       'completed': false
     }
@@ -32,6 +33,8 @@ export const getters = {
 export const mutations = {
   [types.ADD_TODO] (state, { title }) {
     state.list.push({
+      userId: null,
+      id: uuid(),
       title: title,
       completed: true
     })
@@ -75,7 +78,7 @@ export const actions = {
 
     commit({
       type: types.SET_TODOS,
-      todos: JSON.parse(response)
+      todos: response.data
     })
   }
 }
