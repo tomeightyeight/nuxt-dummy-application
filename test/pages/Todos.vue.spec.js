@@ -68,7 +68,7 @@ describe('todos.vue', () => {
     // expect(actions.removeToDo).toBeCalled()
   })
 
-  it ('invoke store action fetchToDos when fetch button is clicked', () => {
+  it('invoke store action fetchToDos when fetch button is clicked', () => {
     const wrapper = mount(TodosView, { store, localVue })
     const button = wrapper.find('.btn-fetch')
 
