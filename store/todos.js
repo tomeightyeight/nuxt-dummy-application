@@ -27,7 +27,8 @@ export const types = {
 }
 
 export const getters = {
-  completedToDos: state => state.list.filter(todo => todo.completed).length
+  completedToDos: state => state.list
+    .filter(todo => todo.completed).length
 }
 
 export const mutations = {
