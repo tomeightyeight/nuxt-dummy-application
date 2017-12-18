@@ -23,6 +23,7 @@
     "babel-eslint": "^7.2.3",
     "babel-jest": "^21.2.0",
     "babel-plugin-component": "^0.10.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "element-ui": "^2.0.8",
     "eslint": "^4.3.0",
     "eslint-config-standard": "^10.2.1",
@@ -42,6 +43,7 @@
     "vue-test-utils": "^1.0.0-beta.8"
   },
   "jest": {
+    "verbose": true,
     "moduleFileExtensions": [
       "js",
       "vue"
