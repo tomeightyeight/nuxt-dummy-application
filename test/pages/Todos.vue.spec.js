@@ -50,7 +50,7 @@ describe('todos.vue', () => {
     })
   })
 
-  it('invoke store action addToDo when submit button clicked', () => {
+  it('dispatch store action addToDo when submit button clicked', () => {
     const wrapper = mount(TodosView, { store, localVue })
     const button = wrapper.find('.btn-submit')
 
@@ -59,7 +59,7 @@ describe('todos.vue', () => {
     expect(actions.addToDo).toBeCalled()
   })
 
-  it('invoke store action removeToDo when remove button is clicked', () => {
+  it('dispatch store action removeToDo when remove button is clicked', () => {
     // const wrapper = mount(TodosView, { store, localVue })
     // const button = wrapper.find('.btn-remove')
 
@@ -68,7 +68,7 @@ describe('todos.vue', () => {
     // expect(actions.removeToDo).toBeCalled()
   })
 
-  it('invoke store action fetchToDos when fetch button is clicked', () => {
+  it('dispatch store action fetchToDos when fetch button is clicked', () => {
     const wrapper = mount(TodosView, { store, localVue })
     const button = wrapper.find('.btn-fetch')
 
