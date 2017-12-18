@@ -5,7 +5,8 @@ import {
   state, 
   types,
   getters,
-  mutations
+  mutations,
+  actions
 } from '@/store/todos.js'
 
 let mockState
@@ -15,7 +16,7 @@ beforeEach(() => {
 })
 
 describe('mutations', () => {
-  it('adds a todo to the list array', () => {
+  it('ADD_TODO', () => {
     const title = 'foo'
     mutations[types.ADD_TODO](mockState, { title: title })
     const item = mockState.list.pop()
@@ -23,14 +24,14 @@ describe('mutations', () => {
     expect(item.title).toBe(title)
   })
 
-  it('removes a todo from the list array by index', () => {
+  it('REMOVE_TODO', () => {
     const first = mockState.list[0]
     mutations[types.REMOVE_TODO](mockState, { index: 0 })
     
     expect(first.title).not.toBe(mockState.list[0].title)
   })
 
-  it ('sets todos on the store', () => {
+  it ('SET_TODOS', () => {
     const todos = [
       {
         'userId': 1,
@@ -47,7 +48,7 @@ describe('mutations', () => {
 })
 
 describe('getters', () => {
-  it('returns a count of all the completed todos', () => {
+  it('completedToDos', () => {
     const actual = mockState.list.filter(todo => todo.completed).length
     const completed = getters.completedToDos(mockState)
 
@@ -56,7 +57,8 @@ describe('getters', () => {
 })
 
 describe('actions', () => {
-  it('fetch todos from endpoint and and commit to store', () => {
-    //
+  it('fetchToDos', () => {
+    const commit = function(payload) {}
+    actions.fetchToDos({ commit: commit })    
   })
 })
