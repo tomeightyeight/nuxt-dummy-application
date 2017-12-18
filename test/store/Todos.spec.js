@@ -82,6 +82,7 @@ describe('actions', () => {
       expect(commit).toBeCalled()
     })
   })
+  
   it('fetchToDo invokes API service fetch', () => {
     (async function() {
       await actions.fetchToDo ({ commit }, { id: 1 })
