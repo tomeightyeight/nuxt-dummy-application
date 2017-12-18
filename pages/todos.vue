@@ -3,13 +3,13 @@
     <ul>
       <li v-for="(item, index) in list" :key="index">
         {{ item.title }}
-        <el-button @click="remove(index)">X</el-button>
+        <el-button class="btn-remove" @click="remove(index)">X</el-button>
       </li>
     </ul>
 
     <el-input v-model="input"></el-input>
-    <el-button @click.prevent="submit()">Submit</el-button>
-    <el-button @click.prevent="fetch()">Fetch</el-button>
+    <el-button class="btn-submit" @click.prevent="submit()">Submit</el-button>
+    <el-button class="btn-fetch" @click.prevent="fetch()">Fetch</el-button>
 
     <div>
       <span>Completed: {{ completedToDos }}</span>
