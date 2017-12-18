@@ -11,23 +11,38 @@ import {
 let mockState
 
 beforeEach(() => {
-  mockState = state();
+  mockState = state()
 })
 
 describe('mutations', () => {
   it('adds a todo to the list array', () => {
-    const text = 'foo'
-    mutations[types.ADD_TODO](mockState, { text: text })
+    const title = 'foo'
+    mutations[types.ADD_TODO](mockState, { title: title })
     const item = mockState.list.pop()
 
-    expect(item.text).toBe(text)
+    expect(item.title).toBe(title)
   })
 
   it('removes a todo from the list array by index', () => {
     const first = mockState.list[0]
     mutations[types.REMOVE_TODO](mockState, { index: 0 })
     
-    expect(first.text).not.toBe(mockState.list[0].text)
+    expect(first.title).not.toBe(mockState.list[0].title)
+  })
+
+  it ('sets todos on the store', () => {
+    const todos = [
+      {
+        'userId': 1,
+        'id': 1,
+        'title': 'test todo',
+        'completed': false
+      }
+    ]
+
+    mutations[types.SET_TODOS](mockState, { todos: todos })
+
+    expect(todos).toEqual(mockState.list)
   })
 })
 
@@ -38,4 +53,10 @@ describe('getters', () => {
 
     expect(completed).toBe(actual)
   })   
+})
+
+describe('actions', () => {
+  it('fetch todos from endpoint and and commit to store', () => {
+    //
+  })
 })

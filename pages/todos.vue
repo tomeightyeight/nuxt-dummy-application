@@ -2,13 +2,14 @@
   <section class="section">
     <ul>
       <li v-for="(item, index) in list" :key="index">
-        {{ item.text }}
+        {{ item.title }}
         <el-button @click="remove(index)">X</el-button>
       </li>
     </ul>
 
     <el-input v-model="input"></el-input>
     <el-button @click="submit()">Submit</el-button>
+    <el-button @click="fetch()">Fetch</el-button>
 
     <div>
       <span>Completed: {{ completedToDos }}</span>
@@ -57,12 +58,13 @@ export default {
   methods: {
     ...mapActions('todos', [
       'addToDo',
-      'removeToDo'
+      'removeToDo',
+      'fetchToDos'
     ]),
 
     submit () {
       this.addToDo({
-        text: this.input
+        title: this.input
       })
     },
 
@@ -70,6 +72,10 @@ export default {
       this.removeToDo({
         index: index
       })
+    },
+
+    fetch () {
+      this.fetchToDos()
     }
   }
 }
