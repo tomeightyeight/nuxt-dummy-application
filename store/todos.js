@@ -1,7 +1,7 @@
 'use strict'
 
-import axios from 'axios'
-import uuid from '~/utils/uuid'
+import toDoService from '../api/todos.js'
+import { uuid } from '../utils/uuid.js'
 
 export const state = () => ({
   list: [
@@ -64,21 +64,17 @@ export const actions = {
     })
   },
 
-  async fetchToDos ({commit}) {
-    let response
-
-    try {
-      response = await axios({
-        method: 'GET',
-        url: 'https://jsonplaceholder.typicode.com/todos?userId=1'
-      })
-    } catch (e) {
-      console.warn(e)
-    }
+  async fetchToDos ({ commit }) {
+    const response = await toDoService.fetchAll()
 
     commit({
       type: types.SET_TODOS,
       todos: response.data
     })
+  },
+
+  async fetchToDo ({ commit }, { id }) {
+    const response = await toDoService.fetch(id)
+    console.log(response)
   }
 }
