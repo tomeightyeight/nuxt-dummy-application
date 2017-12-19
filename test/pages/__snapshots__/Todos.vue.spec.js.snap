@@ -2,12 +2,20 @@
 
 exports[`todos.vue has same HTML structure 1`] = `
 <section class="section">
-    <ul></ul>
-    <div>
-        <button type="button" class="el-button btn-remove el-button--default">
-            <!---->
-            <!----><span>Test Button</span></button>
-    </div>
+    <ul>
+        <li>
+            delectus aut autem original
+            <button type="button" class="el-button btn-remove el-button--default">
+                <!---->
+                <!----><span>X</span></button>
+        </li>
+        <li>
+            quis ut nam facilis et officia qui original
+            <button type="button" class="el-button btn-remove el-button--default">
+                <!---->
+                <!----><span>X</span></button>
+        </li>
+    </ul>
     <div class="input-new-todo el-input">
         <!---->
         <input autocomplete="off" type="text" rows="2" autoComplete="off" validateEvent="true" value="" class="el-input__inner">

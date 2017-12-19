@@ -1,17 +1,11 @@
 /* eslint-disable */
 'use strict'
 
-import { 
-  mount,
-  createLocalVue 
-} from 'vue-test-utils'
-
-import { 
-  createRenderer 
-} from 'vue-server-renderer'
+import { mount, createLocalVue } from 'vue-test-utils'
+import { createRenderer } from 'vue-server-renderer'
 
 import Vuex from 'vuex'
-import state from '@/store/todos.js'
+import { state } from '@/store/todos.js'
 
 import TodosView from '@/pages/todos.vue'
 
@@ -51,7 +45,7 @@ describe('todos.vue', () => {
 
   it ('renders li for each item in store.state.list', () => {
     const wrapper = mount(TodosView, { store, localVue })
-    // console.log(wrapper)
+    // console.log(wrapper.find)
   })
 
   it ('has same HTML structure', () => {
@@ -59,7 +53,10 @@ describe('todos.vue', () => {
     const wrapper = mount(TodosView, { store, localVue })
     
     renderer.renderToString(wrapper.vm, (err, str) => {
-      if (err) throw new Error(err)
+      if (err) {
+        throw new Error(err)
+      }
+
       expect(str).toMatchSnapshot()
     })   
   })

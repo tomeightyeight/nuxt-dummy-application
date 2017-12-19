@@ -7,10 +7,6 @@
       </li>
     </ul>
 
-    <div>
-      <el-button class="btn-remove" @click.prevent="remove(0)">Test Button</el-button>
-    </div>
-
     <el-input class="input-new-todo" v-model="input"></el-input>
     <el-button class="btn-submit" @click.prevent="submit()">Submit</el-button>
     <el-button class="btn-fetch" @click.prevent="fetch()">Fetch</el-button>
