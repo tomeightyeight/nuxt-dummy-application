@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`todos.vue has same HTML structure 1`] = `
+<section class="section">
+    <ul></ul>
+    <div>
+        <button type="button" class="el-button btn-remove el-button--default">
+            <!---->
+            <!----><span>Test Button</span></button>
+    </div>
+    <div class="input-new-todo el-input">
+        <!---->
+        <input autocomplete="off" type="text" rows="2" autoComplete="off" validateEvent="true" value="" class="el-input__inner">
+        <!---->
+        <!---->
+        <!---->
+    </div>
+    <button type="button" class="el-button btn-submit el-button--default">
+        <!---->
+        <!----><span>Submit</span></button>
+    <button type="button" class="el-button btn-fetch el-button--default">
+        <!---->
+        <!----><span>Fetch</span></button>
+    <div><span class="some-test-class">Completed: </span></div>
+</section>
+`;

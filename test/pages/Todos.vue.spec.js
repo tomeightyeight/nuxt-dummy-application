@@ -6,6 +6,10 @@ import {
   createLocalVue 
 } from 'vue-test-utils'
 
+import { 
+  createRenderer 
+} from 'vue-server-renderer'
+
 import Vuex from 'vuex'
 import state from '@/store/todos.js'
 
@@ -43,6 +47,21 @@ describe('todos.vue', () => {
         }
       }
     })
+  })
+
+  it ('renders li for each item in store.state.list', () => {
+    const wrapper = mount(TodosView, { store, localVue })
+    // console.log(wrapper)
+  })
+
+  it ('has same HTML structure', () => {
+    const renderer = createRenderer()
+    const wrapper = mount(TodosView, { store, localVue })
+    
+    renderer.renderToString(wrapper.vm, (err, str) => {
+      if (err) throw new Error(err)
+      expect(str).toMatchSnapshot()
+    })   
   })
 
   it ('input element exists and renders', () => {
