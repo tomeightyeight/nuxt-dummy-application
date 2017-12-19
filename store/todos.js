@@ -66,20 +66,20 @@ export const actions = {
   },
 
   async fetchToDos ({ commit }) {
-    const response = await toDoService.fetchAll()
+    const { data } = await toDoService.fetchAll()
 
     commit({
       type: types.SET_TODOS,
-      todos: response.data
+      todos: data
     })
   },
 
   async fetchToDo ({ commit }, { id }) {
-    const response = await toDoService.fetch(id)
+    const { data } = await toDoService.fetch(id)
 
     commit({
       type: types.SET_TODOS,
-      todos: response.data
+      todos: data
     })
   }
 }
