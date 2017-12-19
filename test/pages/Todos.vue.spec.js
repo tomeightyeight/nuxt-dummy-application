@@ -78,7 +78,9 @@ describe('todos.vue', () => {
     const input = wrapper.find('.input-new-todo')
     const button = wrapper.find('.btn-submit')
 
-    input.element.value = '';
+    wrapper.setData({
+      input: ''
+    })
 
     expect(actions.addToDo).not.toBeCalled()
   })
