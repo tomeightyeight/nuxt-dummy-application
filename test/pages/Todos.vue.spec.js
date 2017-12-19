@@ -45,34 +45,57 @@ describe('todos.vue', () => {
     })
   })
 
+  it ('input element exists and renders', () => {
+    const wrapper = mount(TodosView, { store, localVue })
+    expect(wrapper.contains('.input-new-todo')).toBe(true)
+  })
+
+  it ('submit button exists and renders', () => {
+    const wrapper = mount(TodosView, { store, localVue })
+    expect(wrapper.contains('.btn-submit')).toBe(true)
+  })
+
+  it ('fetch button exists and renders', () => {
+    const wrapper = mount(TodosView, { store, localVue })
+    expect(wrapper.contains('.btn-fetch')).toBe(true)
+  })
+
   it('dispatch store action addToDo when submit button clicked', () => {
     const wrapper = mount(TodosView, { store, localVue })
-    
-    expect(wrapper.contains('.btn-submit')).toBe(true)
-    
     const button = wrapper.find('.btn-submit')
+
+    wrapper.setData({
+      input: 'foo'
+    })
+    
     button.trigger('click')
     
     expect(actions.addToDo).toBeCalled()
   })
 
+  it('does not dispatch store action addToDo when submit button clicked if input empty', () => {
+    const wrapper = mount(TodosView, { store, localVue })
+    const input = wrapper.find('.input-new-todo')
+    const button = wrapper.find('.btn-submit')
+
+    input.element.value = '';
+
+    expect(actions.addToDo).not.toBeCalled()
+  })
+
   it('dispatch store action removeToDo when remove button is clicked', () => {
-    const wrapper = mount(TodosView, { store, localVue })   
-    
-    expect(wrapper.contains('.btn-remove')).toBe(true)
-    
+    const wrapper = mount(TodosView, { store, localVue })       
     const button = wrapper.find('.btn-remove')
+    
     button.trigger('click')
 
     expect(actions.removeToDo).toBeCalled()
   })
 
   it('dispatch store action fetchToDos when fetch button is clicked', () => {
-    const wrapper = mount(TodosView, { store, localVue })
-    
-    expect(wrapper.contains('.btn-fetch')).toBe(true)
-    
+    const wrapper = mount(TodosView, { store, localVue })  
     const button = wrapper.find('.btn-fetch')
+    
     button.trigger('click')
 
     expect(actions.fetchToDos).toBeCalled()
