@@ -47,17 +47,21 @@ describe('todos.vue', () => {
 
   it('dispatch store action addToDo when submit button clicked', () => {
     const wrapper = mount(TodosView, { store, localVue })
+    
+    expect(wrapper.contains('.btn-submit')).toBe(true)
+    
     const button = wrapper.find('.btn-submit')
-
     button.trigger('click')
     
     expect(actions.addToDo).toBeCalled()
   })
 
   it('dispatch store action removeToDo when remove button is clicked', () => {
-    const wrapper = mount(TodosView, { store, localVue })    
+    const wrapper = mount(TodosView, { store, localVue })   
+    
+    expect(wrapper.contains('.btn-remove')).toBe(true)
+    
     const button = wrapper.find('.btn-remove')
-
     button.trigger('click')
 
     expect(actions.removeToDo).toBeCalled()
@@ -65,8 +69,10 @@ describe('todos.vue', () => {
 
   it('dispatch store action fetchToDos when fetch button is clicked', () => {
     const wrapper = mount(TodosView, { store, localVue })
+    
+    expect(wrapper.contains('.btn-fetch')).toBe(true)
+    
     const button = wrapper.find('.btn-fetch')
-
     button.trigger('click')
 
     expect(actions.fetchToDos).toBeCalled()
