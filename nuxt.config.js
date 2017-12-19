@@ -16,6 +16,7 @@ module.exports = {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
+
   /**
    * Customize the progress bar color
    */
@@ -26,12 +27,14 @@ module.exports = {
     color: '#000',
     background: 'white'
   },
+
   /**
    * Custom plugins
    */
   plugins: [
     //
   ],
+
   /**
    * Build configuration (webpack extension)
    */
@@ -85,6 +88,7 @@ module.exports = {
       }
     }
   },
+
   generate: {
     dir: 'dist'
   }
