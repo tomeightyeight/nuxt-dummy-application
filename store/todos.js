@@ -76,6 +76,10 @@ export const actions = {
 
   async fetchToDo ({ commit }, { id }) {
     const response = await toDoService.fetch(id)
-    console.log(response)
+
+    commit({
+      type: types.SET_TODOS,
+      todos: response.data
+    })
   }
 }

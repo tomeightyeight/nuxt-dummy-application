@@ -7,10 +7,7 @@ export default {
 
   async fetchAll () {
     try {
-      return await axios({
-        method: 'GET',
-        url: `${this.uri}/todos?userId=1`
-      })
+      return await axios.get(`${this.uri}/todos?userId=1`)
     } catch (e) {
       console.warn(e)
     }
@@ -18,10 +15,7 @@ export default {
 
   async fetch (id) {
     try {
-      return await axios({
-        method: 'GET',
-        url: `${this.uri}/todos/${id}`
-      })
+      return await axios.get(`${this.uri}/todos/${id}`)
     } catch (e) {
       console.warn(e)
     }

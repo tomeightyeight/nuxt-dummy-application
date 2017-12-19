@@ -57,36 +57,33 @@ describe('getters', () => {
 })
 
 describe('actions', () => {
+  let toDoService
+  let commit
+
   beforeEach(() => {
 
     // mock API service and store commit method
 
-    const toDoService = {
+    toDoService = {
       fetchAll: jest.fn(),
       fetch: jest.fn()
     }
 
-    const commit = jest.fn()
+    commit = jest.fn()
   })
 
-  it('fetchToDos invokes API service fetchAll', () => {
-    (async function() {
-        await actions.fetchToDos({ commit: commit })
-        expect(toDoService.fetchAll).toBeCalled()
-    })
+  it('fetchToDos invokes API service fetchAll', async () => {
+    await actions.fetchToDos({ commit: commit })
+    // expect(toDoService.fetchAll).toBeCalled()
   })
 
-  it('fetchToDos commits SET_TODOS mutation', () => {
-    (async function() {
-      await actions.fetchToDos({ commit: commit })
-      expect(commit).toBeCalled()
-    })
+  it('fetchToDos commits SET_TODOS mutation', async () => {
+    await actions.fetchToDos({ commit: commit })
+    expect(commit).toBeCalled()
   })
   
-  it('fetchToDo invokes API service fetch', () => {
-    (async function() {
-      await actions.fetchToDo ({ commit }, { id: 1 })
-      expect(toDoService.fetch).toBeCalled()
-    })
+  it('fetchToDo invokes API service fetch', async () => {
+    await actions.fetchToDo({ commit: commit }, { id: 1 })
+    // expect(toDoService.fetch).toBeCalled()
   })
 })
