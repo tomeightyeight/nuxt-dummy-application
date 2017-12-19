@@ -1,6 +1,6 @@
-# Nuxt Boilerplate
+# Nuxt Dummy Application
 
-> A Nuxt boilerplate for creating new applications
+> A Nuxt dummy for playing with architecture and tooling
 
 ## Build Setup
 
@@ -18,7 +18,7 @@ $ npm start
 # generate static project
 $ npm run generate
 
-# run test suites
+# run tests
 $ npm test
 ```
 
