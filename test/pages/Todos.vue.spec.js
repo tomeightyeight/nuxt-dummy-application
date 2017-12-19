@@ -1,7 +1,7 @@
 /* eslint-disable */
 'use strict'
 
-import { mount, createLocalVue } from 'vue-test-utils'
+import { shallow, mount, createLocalVue } from 'vue-test-utils'
 import { createRenderer } from 'vue-server-renderer'
 
 import Vuex from 'vuex'
@@ -44,7 +44,7 @@ describe('todos.vue', () => {
   })
 
   it('renders li for each item in store', () => {
-    const wrapper = mount(TodosView, { store, localVue })
+    const wrapper = shallow(TodosView, { store, localVue })
     const items = wrapper.findAll('li')
 
     expect(items).toHaveLength(store.state.todos.list.length)
