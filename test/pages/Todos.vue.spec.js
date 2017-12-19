@@ -7,6 +7,8 @@ import {
 } from 'vue-test-utils'
 
 import Vuex from 'vuex'
+import state from '@/store/todos.js'
+
 import TodosView from '@/pages/todos.vue'
 
 const localVue = createLocalVue()
@@ -16,7 +18,6 @@ describe('todos.vue', () => {
   let actions
   let getters
   let store
-  let state
 
   beforeEach(() => {
 
@@ -30,12 +31,6 @@ describe('todos.vue', () => {
 
     getters = {
       completedToDos: jest.fn()
-    }
-
-    state = {
-      list: [
-        //
-      ]
     }
 
     store = new Vuex.Store({
@@ -60,12 +55,12 @@ describe('todos.vue', () => {
   })
 
   it('dispatch store action removeToDo when remove button is clicked', () => {
-    // const wrapper = mount(TodosView, { store, localVue })
-    // const button = wrapper.find('.btn-remove')
+    const wrapper = mount(TodosView, { store, localVue })    
+    const button = wrapper.find('.btn-remove')
 
-    // button.trigger('click')
+    button.trigger('click')
 
-    // expect(actions.removeToDo).toBeCalled()
+    expect(actions.removeToDo).toBeCalled()
   })
 
   it('dispatch store action fetchToDos when fetch button is clicked', () => {
