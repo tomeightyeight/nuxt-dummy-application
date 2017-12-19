@@ -11,11 +11,11 @@ import {
 
 let mockState
 
-beforeEach(() => {
-  mockState = state()
-})
-
 describe('mutations', () => {
+  beforeEach(() => {
+    mockState = state()
+  })
+
   it('ADD_TODO', () => {
     const title = 'foo'
     mutations[types.ADD_TODO](mockState, { title: title })
@@ -48,6 +48,10 @@ describe('mutations', () => {
 })
 
 describe('getters', () => {
+  beforeEach(() => {
+    mockState = state()
+  })
+
   it('completedToDos', () => {
     const actual = mockState.list.filter(todo => todo.completed).length
     const completed = getters.completedToDos(mockState)
@@ -65,6 +69,7 @@ describe('actions', () => {
     // mock API service and store commit method
 
     toDoService = {
+      uri: '',
       fetchAll: jest.fn(),
       fetch: jest.fn()
     }
@@ -74,7 +79,7 @@ describe('actions', () => {
 
   it('fetchToDos invokes API service fetchAll', async () => {
     await actions.fetchToDos({ commit: commit })
-    // expect(toDoService.fetchAll).toBeCalled()
+    expect(toDoService.fetchAll).toBeCalled()
   })
 
   it('fetchToDos commits SET_TODOS mutation', async () => {
