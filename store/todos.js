@@ -14,7 +14,7 @@ export const state = () => ({
     {
       'userId': 1,
       'id': uuid(),
-      'title': 'quis ut nam facilis et officia qui original',
+      'title': 'quis ut nam facilis et  original',
       'completed': false
     }
   ]
