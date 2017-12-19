@@ -43,13 +43,6 @@ describe('todos.vue', () => {
     })
   })
 
-  it('renders li for each item in store', () => {
-    const wrapper = shallow(TodosView, { store, localVue })
-    const items = wrapper.findAll('li')
-
-    expect(items).toHaveLength(store.state.todos.list.length)
-  })
-
   it('snapshot: has same HTML structure', () => {
     const renderer = createRenderer()
     const wrapper = mount(TodosView, { store, localVue })
@@ -61,6 +54,13 @@ describe('todos.vue', () => {
 
       expect(str).toMatchSnapshot()
     })   
+  })
+
+  it('renders li for each item in store', () => {
+    const wrapper = shallow(TodosView, { store, localVue })
+    const items = wrapper.findAll('li')
+
+    expect(items).toHaveLength(store.state.todos.list.length)
   })
 
   it('dispatch store action addToDo when submit button clicked', () => {
