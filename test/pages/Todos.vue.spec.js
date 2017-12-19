@@ -50,7 +50,7 @@ describe('todos.vue', () => {
     expect(items).toHaveLength(store.state.todos.list.length)
   })
 
-  it('has same HTML structure', () => {
+  it('snapshot: has same HTML structure', () => {
     const renderer = createRenderer()
     const wrapper = mount(TodosView, { store, localVue })
     

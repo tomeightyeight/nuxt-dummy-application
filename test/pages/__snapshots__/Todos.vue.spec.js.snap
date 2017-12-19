@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`todos.vue has same HTML structure 1`] = `
+exports[`todos.vue snapshot: has same HTML structure 1`] = `
 <section class="section">
     <ul>
         <li>
