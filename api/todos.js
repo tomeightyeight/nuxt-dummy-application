@@ -3,11 +3,13 @@
 import axios from 'axios'
 
 export default {
+  uri: 'https://jsonplaceholder.typicode.com',
+
   async fetchAll () {
     try {
       return await axios({
         method: 'GET',
-        url: 'https://jsonplaceholder.typicode.com/todos?userId=1'
+        url: `${this.uri}/todos?userId=1`
       })
     } catch (e) {
       console.warn(e)
@@ -18,7 +20,7 @@ export default {
     try {
       return await axios({
         method: 'GET',
-        url: `https://jsonplaceholder.typicode.com/todos/${id}`
+        url: `${this.uri}/todos/${id}`
       })
     } catch (e) {
       console.warn(e)
