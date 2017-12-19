@@ -63,21 +63,6 @@ describe('todos.vue', () => {
     })   
   })
 
-  it ('input element exists and renders', () => {
-    const wrapper = mount(TodosView, { store, localVue })
-    expect(wrapper.contains('.input-new-todo')).toBe(true)
-  })
-
-  it ('submit button exists and renders', () => {
-    const wrapper = mount(TodosView, { store, localVue })
-    expect(wrapper.contains('.btn-submit')).toBe(true)
-  })
-
-  it ('fetch button exists and renders', () => {
-    const wrapper = mount(TodosView, { store, localVue })
-    expect(wrapper.contains('.btn-fetch')).toBe(true)
-  })
-
   it('dispatch store action addToDo when submit button clicked', () => {
     const wrapper = mount(TodosView, { store, localVue })
     const button = wrapper.find('.btn-submit')
@@ -91,7 +76,7 @@ describe('todos.vue', () => {
     expect(actions.addToDo).toBeCalled()
   })
 
-  it('does not dispatch store action addToDo when submit button clicked if input empty', () => {
+  it('does not dispatch store action addToDo if input empty', () => {
     const wrapper = mount(TodosView, { store, localVue })
     const input = wrapper.find('.input-new-todo')
     const button = wrapper.find('.btn-submit')
