@@ -43,9 +43,11 @@ describe('todos.vue', () => {
     })
   })
 
-  it ('renders li for each item in store.state.list', () => {
+  it ('renders li for each item in store', () => {
     const wrapper = mount(TodosView, { store, localVue })
-    // console.log(wrapper.find)
+    const items = wrapper.findAll('li')
+
+    expect(items).toHaveLength(store.state.todos.list.length)
   })
 
   it ('has same HTML structure', () => {
