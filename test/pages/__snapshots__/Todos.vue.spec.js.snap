@@ -10,7 +10,7 @@ exports[`todos.vue has same HTML structure 1`] = `
                 <!----><span>X</span></button>
         </li>
         <li>
-            quis ut nam facilis et officia qui original
+            quis ut nam facilis et original
             <button type="button" class="el-button btn-remove el-button--default">
                 <!---->
                 <!----><span>X</span></button>
