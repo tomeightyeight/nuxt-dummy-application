@@ -53,10 +53,28 @@ describe('getters', () => {
   })
 
   it('completedToDos', () => {
-    const actual = mockState.list.filter(todo => todo.completed).length
+    const result = 2
+
+    mockState = {
+      list: [
+        {
+          'userId': 1,
+          'id': 1,
+          'title': 'test todo',
+          'completed': true
+        },
+        {
+          'userId': 1,
+          'id': 2,
+          'title': 'test todo',
+          'completed': true
+        }
+      ]
+    }
+
     const completed = getters.completedToDos(mockState)
 
-    expect(completed).toBe(actual)
+    expect(completed).toBe(result)
   })   
 })
 
